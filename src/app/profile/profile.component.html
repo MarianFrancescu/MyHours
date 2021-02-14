@@ -1,0 +1,46 @@
+<div class="float-container">
+    <div class="box1">
+       <h2>Account settings</h2>
+    </div>
+    
+    <div class="float-child">
+        
+    <nav class="navbar navbar-lg navbar-dark bg-primary">
+        <div class="navbar">
+            <ul *ngIf="user" class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit profile</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/tasks'">Add a task</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="'#'">View solved tasks</a> 
+                </li>
+            </ul>
+            <ul *ngIf="!user" class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">No options</a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+    <div class="float-child">
+        <div class="green">
+            <li *ngIf="user">
+                <h3>Hello</h3>
+                
+                <h4>Here you can edit your tasks</h4>
+            </li>
+            <li *ngIf="!user">
+                <h3>You have to be logged id</h3>
+                <a class="link" [routerLink]="'/signup'">go to Login</a>
+            </li>
+            
+        </div>
+    </div>
+
+    
+</div>

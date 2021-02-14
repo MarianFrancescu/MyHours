@@ -1,0 +1,55 @@
+<div class="container-md">
+    <h2>Here you can add new tasks to the schedule</h2>
+<form class="row gx-3 gy-2 align-items-center">
+    <div class="col-sm-3">
+        <label class="form-label" for="taskName">Task</label>
+        <input 
+            required ngModel name="taskName" #taskName="ngModel"
+            [class.invalid]="taskName.invalid && taskName.touched"
+            type="text" class="form-control" id="taskName" placeholder="Task name">
+    </div>
+    <div class="col-sm-3">
+        <label class="form-label" for="domainInput">Domain</label>
+        <input 
+            required ngModel name="domainInput" #domainInput="ngModel"
+            [class.invalid]="domainInput.invalid && domainInput.touched"
+            type="text" class="form-control" id="domainInput" placeholder="">
+        <div *ngIf="domainInput.invalid && domainInput.touched" class="error-text">
+            <small>Field required</small>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <label class="form-label" for="descriptionInput">Description</label>
+        <input 
+            required ngModel name="descriptionInput" #descriptionInput="ngModel"
+            [class.invalid]="descriptionInput.invalid && descriptionInput.touched"
+            type="text" class="form-control" id="descriptionInput" placeholder="">
+        <div *ngIf="descriptionInput.invalid && descriptionInput.touched" class="error-text">
+            <small>Field required</small>
+        </div>
+    </div>
+    <!-- <div class="col-sm-3">
+        <label class="form-label" for="estimatedInput">Estimated time(in hours)</label>
+        <input 
+            required ngModel name="estimatedInput" #estimatedInput="ngModel"
+            [class.invalid]="estimatedInput.invalid && estimatedInput.touched"
+            type="text" class="form-control" id="estimatedInput" placeholder="">
+        <div *ngIf="estimatedInput.invalid && estimatedInput.touched" class="error-text">
+            <small>Field required</small>
+        </div>
+    </div> -->
+
+    <div class="col-sm-3">
+        <label class="visually-hidden" for="estimatedInput">Estimated time</label>
+        <select required ngModel name="estimatedInput" #estimatedInput="ngModel" id="estimatedInput" >
+          <option selected>Choose...</option>
+          <option value="1">2 hours</option>
+          <option value="24">1 day</option>
+          <option value="168">1 week</option>
+        </select>
+      </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" (click)="submit()" >Submit</button>
+    </div>
+</form>
+</div>

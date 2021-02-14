@@ -1,2 +1,48 @@
-
+<div class="container-md">
+    <h1>Scheduled tasks</h1>
+    <ng-container>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task name</th>
+                    <th>Task description</th>
+                    <th>Task domain</th>
+                    <th>Estimated time(in hours)</th>
+                    <th>Time left(in minutes)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of $tasks | async">
+                    <td>
+                        {{ t.task.name }}
+                    </td>
+                    <td>
+                        {{ t.task.description  }}
+                    </td>
+                    <td>
+                        {{ t.task.domain }}
+                    </td>
+                    <td>
+                        {{ t.task.estimatedTime }}
+                    </td>
+                    <td>
+                        <p>{{ timeLeft }} in minutes</p>
+                    </td>
+                    <td>
+                        <button (click)="startTimer()">Start task</button>
+                        <br>
+                        <button (click)="pauseTimer()">Pause</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>  
+                </tr>
+            </tfoot>
+        </table>
+    </ng-container>
+</div>
   

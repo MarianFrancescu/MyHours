@@ -14,6 +14,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { SignupComponent } from './signup/signup.component';
     HomepageComponent,
     CalendarComponent,
     SignupComponent,
+    ProfileComponent,
+    TasksComponent,
      
   ],
   imports: [
@@ -37,6 +41,8 @@ import { SignupComponent } from './signup/signup.component';
         { path: '', component:HomepageComponent },
         { path: 'calendar', component: CalendarComponent},
         { path: 'signup', component: SignupComponent },
+        { path: 'profile', component:ProfileComponent },
+        { path: 'tasks', component:TasksComponent },
       ]
     )
   ],
