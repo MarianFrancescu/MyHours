@@ -1,8 +1,27 @@
+.float-container{
+    padding: 20px;
+
+}
+.float-child{
+    width: 50%;
+    float: left;
+    padding: 20px;
+
+    
+}
+.box1{
+    padding-left: 10px;
+}
+.navbar{
+    width: auto;
+    border-radius: 10px;
+    
+}
 @media screen and (min-width: 601px) {
     div.text {
       font-size: 40px;
     }
-    ng-container{
+    div.navbar{
         width: auto;
     }
   }
@@ -12,7 +31,7 @@
     div.text{
       font-size: 20px;
     }
-    ng-container{
+    div.navbar{
         width: auto;
     }
   }
